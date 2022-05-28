@@ -28,16 +28,16 @@ namespace Day51Demo.Services
                     {
                         while (reader.Read())
                         {
-                            var user = new User()
+                            var user = new User
                             {
 
                                 Id = (int)reader["Id"],
-                                FirstName = (string)reader["FirstName"],
-                                LastName = (string)reader["LastName"],
-                                DateOfBirth = (DateTime)reader["DateOfBirth"],
-                                Pan = (string)reader["Pan"],
+                                FirstName = reader["FirstName"].GetDataFromDb<string>(),
+                                LastName = reader["LastName"].GetDataFromDb<string>(),
+                                DateOfBirth = reader["DateOfBirth"].GetDataFromDb<DateTime>(),
+                                Pan = reader["Pan"].GetDataFromDb<string>(),
                                 Address = reader["Address"].GetDataFromDb<string>(),
-                                Gender = (string)reader["Gender"],
+                                Gender = reader["Gender"].GetDataFromDb<string>(),
                                 MobileNumber = reader["MobileNumber"].GetDataFromDb<string>(),
                                 Email = reader["Email"].GetDataFromDb<string>(),
                                 Comment = reader["Comment"].GetDataFromDb<string>(),

@@ -6,20 +6,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>View Employees</title>
+    <title>View Departments</title>
+    <link href="/www-resources/css/form.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>View Employees</h1>
+    <h1>View Departments</h1>
     <form id="form1" runat="server">
         <div>
-            <table>
+            <table class="data-view">
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th></th>
                 </tr>
             <%
-                var departmentService = new DepartmentService();
+                var departmentService = new DepartmentsService();
                 var departments = departmentService.GetAll();
 
                 foreach (var department in departments)
